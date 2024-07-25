@@ -1,0 +1,193 @@
+
+se crea el proyecto 
+-- se instala shadcn-ui 
+--instala un boton de la shadcn-ui
+--instala clerk
+  --se crea el middleware de clerk
+   -- se añade el clerk provier en el layout principal
+   --se crea una carpeta que se llama auth
+   --dentro se crea el sign in y up
+    --crea un layout dentro de auth para crear los estilos
+  
+modal components:
+-- se instala dialog
+-- dentro de la carpeta components y de ui se crea modal.tsx
+ --en page dentro de root se coloca el modal
+ --se instala zustand
+-- se crea una carpeta llamada hooks dentro de esta use-store-moal.tsx
+--dentro de la carpeta components se crea una carpeta llamado modals
+--se crea una carpeta llamada providers
+--dentro de providers modal-providers.tsx
+-- se coloa el ModlaProvider en el layout principal
+--dentro del root en page se coloca el storeModal
+
+form components:
+
+-- se utiliza el componente de shadcn-ui form
+--se crea el componente form en la carpeta ui entro de la carpeta components
+--se utiliza en store-modal.tsx
+--se crea el modal para la informacion es decir el formulario de la creacion de la tienda
+
+
+
+PRISMA, SUPABASE, POSTGRESSQL SETUP:
+
+--instala prisma 
+ --instala prisma client
+  --se inicializa prisma 
+--en lib se crea un archivo llamado prismadb.ts
+-- se coloca el esquema en prisma 
+  --se utiliza el comando npx prisma generate
+   -- se pushea a la base de datos
+-- se crea dentro de la carpeta app una carpeta llamada api dentro una carpeta stores y dentro un archivo llamado route
+--en store-modal se hace algunos cambios con el useState y dentro de los button con el disabled
+--se instala axios, se utiliza axios para hacer la peticion a la api
+--para el manejo e errores se instala react-hot-toast
+--se crea en la carpeta provider un archivo llamado toast-provider.tsx
+--se coloca en el layout principal el ToastProvider
+
+
+DASHBOARD SETUP:
+
+--dentro de app se crea una carpeta llamada dashboard
+--dentro una carpeta llamada storeId
+--dentro un archivo layout
+--se crea dentro de storeId una carpeta llamada routes y un archivo page dentro de esta
+--en la carpeta root se crea un layout.tsx
+-- dentro de root se crea una carpeta llamada routes y se coloca el arcgivo page dentro de esta
+-- se utiliza el comando npx prisma migrate reset
+
+
+
+NAVIGATION BAR:
+
+--en el layout dentro de storeId se importa el componente navbar
+--se crea el componente navbar dentro de la carpeta components
+--se crea el componente main-nav
+--se instala combobox de shadcn
+--se instala command de shadcn ui
+--en la carpeta components se crea un archivo llamado store-switcher.tsx
+--vamos a navbar y se hacen algunos cambios
+-----el problema de data-disabled se arreglo cambiando esto dentro del componente que nos da shadcn-ui especificamente el el data-[disabled] se le coloca ='true'
+
+
+SETTING PAGE:
+
+-- en la carpeta routes dentro de la carpeta storeId se crea una carpeta llamada setting dentro de esta se coloca un archivo page.tsx
+--se crea dentro de la carpeta settings una carpeta llamada components y dentro un archivo llamado settins-form.tsx
+--- se crea un componente llamado heading en components principal dentro de la carpeta ui 
+--se instala separator
+-- en la carpeta api entro de stores se crea una carpeta llamada storeId y dentro un archivo llamado route.t
+--dentro de la carpeta components  esta la carpeta modal y dentro de esta se crea un archivo llamado alert-modal.tsx
+--despues se lleva ese componente a el archivo settings-form.tsx
+--se hace unos ajustes en setting-form para poder eliminar una tienda 
+-- de ahi se va a main-nav dentro de components y añade una ruta
+--se utiliza el componente de alert de shadcn-ui
+-- en ui dentro de components se crea un archivo llamado api-alert.tsx
+---se hace luego cambios a setting-form
+--se utiliza badge de shadcn-ui se utiliza en api-alert
+--EN HOOKS CREA UN ARCHIVO LLAMADO use-origin.tsx
+
+
+
+
+BILLBOARD ENTITY  (vaya publicitaria):
+
+--se hace un cambio en prisma 
+--se añade bilboard en en layout de root 
+--se utiliza npx prisma generate
+--se utiliza luego npx prisma db push
+--hace un cambio en el path e main-nav.tsx
+--en routes dentro de storeId crea una carpeta llamada billboards dentro 
+--se crea una nueva carpeta dentro de la carpeta billboard y entro un archivo client.ts
+--dentro de la carpeta billboards se crea otra carpeta llamada billboardid
+--dentro de esa carpeta billboardid se crea una carpeta components y dentro un archivo billboard-form.tsx
+--se instala cloudinary para el manejo de imagenes y videos 
+--se coloca las claves en el .env
+--se crea en la carpeta components principal en ui el archivo image-upload.tsx
+--se modifica el next config para que acepte las imagenes 
+-- se crea un archivo  en la carpeta api dentro de app se crea una carpeta llamada storeId  y dentro una carpeta llamada billboard y dentro un archivo llamado route.ts
+--se crea dentro de la carpeta billboard una carpeta llamada billboardId dentro un archivo llamado route.ts
+
+DTA TABLE:
+
+--se modifica el documento page principal dentro de la carpetsa billboards
+--se instala data-table e shadcn-ui 
+-- se instala npm install @tanstack/react-table
+--se crea dentro de la carpeta components que esta dentro de billboards un archivo llamado columns.tsx
+--se hace las modificaciones en page que esta dentro de billboard
+-- se instala date-fns
+-- en components inicial en ui dentro se crea un archivo data-table.tsx
+---dentro de este archivo data-table.tsx se copia de la apgina de shadcn ui
+--se crea dentro de omponents un archivo llamado cell-action.tsx
+--se instala dropdown- menu de shadcn ui 
+--se modifica cell-action
+--en la carpeta components principal se crea un archivo dentro e ui llamado api-list.tsx
+--se modifica el middleware
+
+
+
+CATEGORY ENTITY:
+
+--modifica el schema prisma con Catgory
+--añade la ruta category a main-nav.tsx
+--dentro de lca carpeta storeId y entro de routes se crea una carpeta llamada categories (se copio la carpeta billboard pero se le hizo unos ajustes a los components d todos los que estan dentro de esa carpeta y se le hizo un ajuste a billboardId  que se le llamo categoryId y lo que esta dentro de esta carpeta y el page de categoryId)
+--se instala select de shadcn ui 
+--en api dentro de app dentro d ela carpeta storeId > billboards se crea una carpeta llamada categories dentro una carpeta llamada [categoryId]  entro de esta carpeta route.ts y route.ts 
+
+SIZE ENTITY:
+
+---se modifica el shcema prisma con el size
+--dentro de routes de la arpeta storeId se crea la carpeta size 
+--acordarse que esta lo de components,la carpeta sizeId y dentro lo demas
+--se debe colocar en el api la carpeta size
+
+
+ COLORS ENTY:
+
+
+--se coloca en el esquema prisma el color 
+----dentro de  routes que esta dentro de storeId se crea la carpeta colors
+---se importa reac-color npm install react-color
+
+
+
+PRODUCTO ENTITY:
+--se crea el esquema prisma de product e image
+--se añade la ruta en el main-nav
+--en rout dentro de storeId se crea la carpeta products
+--se crea lo mismo que esta en la carpeta categories y size, pero esta vez con product
+-- en lib se crea un archivo llamado utils 
+--se importa checbox de shadcn ui 
+--se hace lo de api dentro de storeId se coloca la carpeta product
+
+
+
+ORDERS ENTITY:
+
+--se modifica es esquema prisma model order se coloca
+-- se coloca ordenItem
+--en main-nav se coloca la ruta order 
+--dentro de storeId  y dentro de routes se coloca una carpeta llamada orders dentro de esa se coloca el orderId, la carpeta components, y el page.tsx
+
+
+DASHBOARD PAGE:
+
+--Se hace lo de la carpeta actions
+--en el page principal dentro de dashboard > storeId > routes se modifica para el dashboard
+--se instala card de shadcn-ui
+--dentro de components crea el archivo overview
+--instala recharts
+--en components se crea el archivo recents-orders
+--instala darkmode de shadcn ui 
+--crea un archivo en la carpeta provider llamada theme-provider.tsx
+--instala npm i next-themes
+--en components crea el theme-toggle.tsx
+
+
+
+Temas a estudiar:
+
+rout group de next
+use client
+zustand
